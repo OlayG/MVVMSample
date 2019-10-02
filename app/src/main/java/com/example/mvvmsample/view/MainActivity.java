@@ -28,15 +28,13 @@ public class MainActivity extends AppCompatActivity {
         // Init ViewModel
         viewModel = ViewModelProviders.of(this).get(MainActivityViewModel.class);
 
-        // Load shibes
-        viewModel.getShibeUrls(10).observe(this, urls -> {
-            if (urls != null) {
-                String display = urls.toString();
+        viewModel.getPosts().observe(this, posts -> {
+            if (posts != null) {
+                String display = posts.toString();
                 tvDisplay.setText(display);
             } else {
-                Toast.makeText(this, "FAILED TO DOWNLOAD", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show();
             }
-
         });
     }
 

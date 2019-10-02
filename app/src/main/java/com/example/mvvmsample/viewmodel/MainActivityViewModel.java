@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
+import com.example.mvvmsample.model.Post;
 import com.example.mvvmsample.repository.Repository;
 
 import java.util.List;
@@ -19,8 +20,7 @@ public class MainActivityViewModel extends AndroidViewModel {
         repository = Repository.getInstance();
     }
 
-    public LiveData<List<String>> getShibeUrls(int count) {
-        return repository.getShibeImageUrls(count);
+    public LiveData<List<Post>> getPosts() {
+        return repository.getPosts();
     }
-
 }

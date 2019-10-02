@@ -1,5 +1,5 @@
 package com.example.mvvmsample.util;
 
 public class Constants {
-    public static final String BASE_URL = "http://shibe.online/api/";
+    public static final String BASE_URL = "https://jsonplaceholder.typicode.com";
 }
